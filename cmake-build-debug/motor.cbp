@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="motor"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/STM32File/motor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="motor.elf">
+				<Option output="D:/STM32File/motor/cmake-build-debug/motor.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/STM32File/motor/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG"/>
+					<Add option="-DUSE_FULL_LL_DRIVER"/>
+					<Add option="-DHSE_VALUE=25000000"/>
+					<Add option="-DHSE_STARTUP_TIMEOUT=100"/>
+					<Add option="-DLSE_STARTUP_TIMEOUT=5000"/>
+					<Add option="-DLSE_VALUE=32768"/>
+					<Add option="-DEXTERNAL_CLOCK_VALUE=12288000"/>
+					<Add option="-DHSI_VALUE=64000000"/>
+					<Add option="-DLSI_VALUE=32000"/>
+					<Add option="-DVDD_VALUE=3300"/>
+					<Add option="-DSTM32H743xx"/>
+					<Add directory="D:/STM32File/motor/Core/Inc"/>
+					<Add directory="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc"/>
+					<Add directory="D:/STM32File/motor/Drivers/CMSIS/Device/ST/STM32H7xx/Include"/>
+					<Add directory="D:/STM32File/motor/Drivers/CMSIS/Include"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/include"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/include-fixed"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 motor.elf"/>
+					<CompileFile command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="motor.elf/fast">
+				<Option output="D:/STM32File/motor/cmake-build-debug/motor.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/STM32File/motor/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG"/>
+					<Add option="-DUSE_FULL_LL_DRIVER"/>
+					<Add option="-DHSE_VALUE=25000000"/>
+					<Add option="-DHSE_STARTUP_TIMEOUT=100"/>
+					<Add option="-DLSE_STARTUP_TIMEOUT=5000"/>
+					<Add option="-DLSE_VALUE=32768"/>
+					<Add option="-DEXTERNAL_CLOCK_VALUE=12288000"/>
+					<Add option="-DHSI_VALUE=64000000"/>
+					<Add option="-DLSI_VALUE=32000"/>
+					<Add option="-DVDD_VALUE=3300"/>
+					<Add option="-DSTM32H743xx"/>
+					<Add directory="D:/STM32File/motor/Core/Inc"/>
+					<Add directory="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc"/>
+					<Add directory="D:/STM32File/motor/Drivers/CMSIS/Device/ST/STM32H7xx/Include"/>
+					<Add directory="D:/STM32File/motor/Drivers/CMSIS/Include"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/include"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/include-fixed"/>
+					<Add directory="c:\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 motor.elf/fast"/>
+					<CompileFile command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/STM32File/motor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/STM32File/motor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/carrotgrx/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f &quot;D:/STM32File/motor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/STM32File/motor/Core/Inc/dma.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Inc/gpio.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Inc/main.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Inc/stm32_assert.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Inc/stm32h7xx_it.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Inc/tim.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Inc/usart.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Src/dma.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Src/gpio.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Src/main.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Src/stm32h7xx_it.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Src/syscalls.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Src/sysmem.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Src/system_stm32h7xx.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Src/tim.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Src/usart.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Core/Startup/startup_stm32h743vgtx.s">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Device/ST/STM32H7xx/LICENSE.txt">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/cmsis_armcc.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/cmsis_armclang.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/cmsis_armclang_ltm.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/cmsis_compiler.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/cmsis_gcc.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/cmsis_iccarm.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/cmsis_version.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_armv81mml.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_armv8mbl.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_armv8mml.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_cm0.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_cm0plus.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_cm1.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_cm23.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_cm3.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_cm33.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_cm35p.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_cm4.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_cm7.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_sc000.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/core_sc300.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/mpu_armv7.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/mpu_armv8.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/Include/tz_context.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/CMSIS/LICENSE.txt">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_bus.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_cortex.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_crs.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_dma.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_dmamux.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_exti.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_gpio.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_pwr.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_rcc.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_system.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_tim.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usart.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_utils.h">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/LICENSE.txt">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_dma.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_exti.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_gpio.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_pwr.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_rcc.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_tim.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usart.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_utils.c">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/STM32H743VGTX_FLASH.ld">
+			<Option target="motor.elf"/>
+		</Unit>
+		<Unit filename="D:/STM32File/motor/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
