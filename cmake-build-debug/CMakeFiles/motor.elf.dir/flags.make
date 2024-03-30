@@ -5,13 +5,13 @@
 # compile C with C:/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe
 ASM_DEFINES = -DDEBUG -DEXTERNAL_CLOCK_VALUE=12288000 -DHSE_STARTUP_TIMEOUT=100 -DHSE_VALUE=25000000 -DHSI_VALUE=64000000 -DLSE_STARTUP_TIMEOUT=5000 -DLSE_VALUE=32768 -DLSI_VALUE=32000 -DSTM32H743xx -DUSE_FULL_LL_DRIVER -DVDD_VALUE=3300
 
-ASM_INCLUDES = -ID:\STM32File\motor\Core\Inc -ID:\STM32File\motor\Drivers\STM32H7xx_HAL_Driver\Inc -ID:\STM32File\motor\Drivers\CMSIS\Device\ST\STM32H7xx\Include -ID:\STM32File\motor\Drivers\CMSIS\Include
+ASM_INCLUDES = -ID:\STM32File\car\Core\Inc -ID:\STM32File\car\Drivers\STM32H7xx_HAL_Driver\Inc -ID:\STM32File\car\Drivers\CMSIS\Device\ST\STM32H7xx\Include -ID:\STM32File\car\Drivers\CMSIS\Include
 
 ASM_FLAGS = -g -mcpu=cortex-m7 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -x assembler-with-cpp -Og -g
 
 C_DEFINES = -DDEBUG -DEXTERNAL_CLOCK_VALUE=12288000 -DHSE_STARTUP_TIMEOUT=100 -DHSE_VALUE=25000000 -DHSI_VALUE=64000000 -DLSE_STARTUP_TIMEOUT=5000 -DLSE_VALUE=32768 -DLSI_VALUE=32000 -DSTM32H743xx -DUSE_FULL_LL_DRIVER -DVDD_VALUE=3300
 
-C_INCLUDES = -ID:\STM32File\motor\Core\Inc -ID:\STM32File\motor\Drivers\STM32H7xx_HAL_Driver\Inc -ID:\STM32File\motor\Drivers\CMSIS\Device\ST\STM32H7xx\Include -ID:\STM32File\motor\Drivers\CMSIS\Include
+C_INCLUDES = -ID:\STM32File\car\Core\Inc -ID:\STM32File\car\Drivers\STM32H7xx_HAL_Driver\Inc -ID:\STM32File\car\Drivers\CMSIS\Device\ST\STM32H7xx\Include -ID:\STM32File\car\Drivers\CMSIS\Include
 
 C_FLAGS = -g -std=gnu11 -fdiagnostics-color=always -mcpu=cortex-m7 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Og -g
 

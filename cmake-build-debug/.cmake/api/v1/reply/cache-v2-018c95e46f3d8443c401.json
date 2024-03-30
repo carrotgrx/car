@@ -163,7 +163,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/STM32File/motor/cmake-build-debug"
+			"value" : "d:/STM32File/car/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -687,7 +687,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/STM32File/motor/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "D:/STM32File/car/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -747,7 +747,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/STM32File/motor"
+			"value" : "D:/STM32File/car"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1399,7 +1399,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/STM32File/motor/cmake-build-debug"
+			"value" : "D:/STM32File/car/cmake-build-debug"
 		},
 		{
 			"name" : "motor_IS_TOP_LEVEL",
@@ -1423,7 +1423,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/STM32File/motor"
+			"value" : "D:/STM32File/car"
 		}
 	],
 	"kind" : "cache",

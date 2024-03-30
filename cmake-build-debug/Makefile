@@ -56,10 +56,10 @@ RM = C:\Users\carrotgrx\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\STM32File\motor
+CMAKE_SOURCE_DIR = D:\STM32File\car
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\STM32File\motor\cmake-build-debug
+CMAKE_BINARY_DIR = D:\STM32File\car\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\STM32File\motor\cmake-build-debug\CMakeFiles D:\STM32File\motor\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\STM32File\car\cmake-build-debug\CMakeFiles D:\STM32File\car\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\STM32File\motor\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\STM32File\car\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -176,6 +176,54 @@ Core/Src/gpio.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/gpio.c.s
 .PHONY : Core/Src/gpio.c.s
 
+Core/Src/inv_mpu.obj: Core/Src/inv_mpu.c.obj
+.PHONY : Core/Src/inv_mpu.obj
+
+# target to build an object file
+Core/Src/inv_mpu.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/inv_mpu.c.obj
+.PHONY : Core/Src/inv_mpu.c.obj
+
+Core/Src/inv_mpu.i: Core/Src/inv_mpu.c.i
+.PHONY : Core/Src/inv_mpu.i
+
+# target to preprocess a source file
+Core/Src/inv_mpu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/inv_mpu.c.i
+.PHONY : Core/Src/inv_mpu.c.i
+
+Core/Src/inv_mpu.s: Core/Src/inv_mpu.c.s
+.PHONY : Core/Src/inv_mpu.s
+
+# target to generate assembly for a file
+Core/Src/inv_mpu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/inv_mpu.c.s
+.PHONY : Core/Src/inv_mpu.c.s
+
+Core/Src/inv_mpu_dmp_motion_driver.obj: Core/Src/inv_mpu_dmp_motion_driver.c.obj
+.PHONY : Core/Src/inv_mpu_dmp_motion_driver.obj
+
+# target to build an object file
+Core/Src/inv_mpu_dmp_motion_driver.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/inv_mpu_dmp_motion_driver.c.obj
+.PHONY : Core/Src/inv_mpu_dmp_motion_driver.c.obj
+
+Core/Src/inv_mpu_dmp_motion_driver.i: Core/Src/inv_mpu_dmp_motion_driver.c.i
+.PHONY : Core/Src/inv_mpu_dmp_motion_driver.i
+
+# target to preprocess a source file
+Core/Src/inv_mpu_dmp_motion_driver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/inv_mpu_dmp_motion_driver.c.i
+.PHONY : Core/Src/inv_mpu_dmp_motion_driver.c.i
+
+Core/Src/inv_mpu_dmp_motion_driver.s: Core/Src/inv_mpu_dmp_motion_driver.c.s
+.PHONY : Core/Src/inv_mpu_dmp_motion_driver.s
+
+# target to generate assembly for a file
+Core/Src/inv_mpu_dmp_motion_driver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/inv_mpu_dmp_motion_driver.c.s
+.PHONY : Core/Src/inv_mpu_dmp_motion_driver.c.s
+
 Core/Src/main.obj: Core/Src/main.c.obj
 .PHONY : Core/Src/main.obj
 
@@ -199,6 +247,78 @@ Core/Src/main.s: Core/Src/main.c.s
 Core/Src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/main.c.s
 .PHONY : Core/Src/main.c.s
+
+Core/Src/mpu6050.obj: Core/Src/mpu6050.c.obj
+.PHONY : Core/Src/mpu6050.obj
+
+# target to build an object file
+Core/Src/mpu6050.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/mpu6050.c.obj
+.PHONY : Core/Src/mpu6050.c.obj
+
+Core/Src/mpu6050.i: Core/Src/mpu6050.c.i
+.PHONY : Core/Src/mpu6050.i
+
+# target to preprocess a source file
+Core/Src/mpu6050.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/mpu6050.c.i
+.PHONY : Core/Src/mpu6050.c.i
+
+Core/Src/mpu6050.s: Core/Src/mpu6050.c.s
+.PHONY : Core/Src/mpu6050.s
+
+# target to generate assembly for a file
+Core/Src/mpu6050.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/mpu6050.c.s
+.PHONY : Core/Src/mpu6050.c.s
+
+Core/Src/myIIC.obj: Core/Src/myIIC.c.obj
+.PHONY : Core/Src/myIIC.obj
+
+# target to build an object file
+Core/Src/myIIC.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/myIIC.c.obj
+.PHONY : Core/Src/myIIC.c.obj
+
+Core/Src/myIIC.i: Core/Src/myIIC.c.i
+.PHONY : Core/Src/myIIC.i
+
+# target to preprocess a source file
+Core/Src/myIIC.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/myIIC.c.i
+.PHONY : Core/Src/myIIC.c.i
+
+Core/Src/myIIC.s: Core/Src/myIIC.c.s
+.PHONY : Core/Src/myIIC.s
+
+# target to generate assembly for a file
+Core/Src/myIIC.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/myIIC.c.s
+.PHONY : Core/Src/myIIC.c.s
+
+Core/Src/pid.obj: Core/Src/pid.c.obj
+.PHONY : Core/Src/pid.obj
+
+# target to build an object file
+Core/Src/pid.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/pid.c.obj
+.PHONY : Core/Src/pid.c.obj
+
+Core/Src/pid.i: Core/Src/pid.c.i
+.PHONY : Core/Src/pid.i
+
+# target to preprocess a source file
+Core/Src/pid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/pid.c.i
+.PHONY : Core/Src/pid.c.i
+
+Core/Src/pid.s: Core/Src/pid.c.s
+.PHONY : Core/Src/pid.s
+
+# target to generate assembly for a file
+Core/Src/pid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\motor.elf.dir\build.make CMakeFiles/motor.elf.dir/Core/Src/pid.c.s
+.PHONY : Core/Src/pid.c.s
 
 Core/Src/stm32h7xx_it.obj: Core/Src/stm32h7xx_it.c.obj
 .PHONY : Core/Src/stm32h7xx_it.obj
@@ -559,9 +679,24 @@ help:
 	@echo ... Core/Src/gpio.obj
 	@echo ... Core/Src/gpio.i
 	@echo ... Core/Src/gpio.s
+	@echo ... Core/Src/inv_mpu.obj
+	@echo ... Core/Src/inv_mpu.i
+	@echo ... Core/Src/inv_mpu.s
+	@echo ... Core/Src/inv_mpu_dmp_motion_driver.obj
+	@echo ... Core/Src/inv_mpu_dmp_motion_driver.i
+	@echo ... Core/Src/inv_mpu_dmp_motion_driver.s
 	@echo ... Core/Src/main.obj
 	@echo ... Core/Src/main.i
 	@echo ... Core/Src/main.s
+	@echo ... Core/Src/mpu6050.obj
+	@echo ... Core/Src/mpu6050.i
+	@echo ... Core/Src/mpu6050.s
+	@echo ... Core/Src/myIIC.obj
+	@echo ... Core/Src/myIIC.i
+	@echo ... Core/Src/myIIC.s
+	@echo ... Core/Src/pid.obj
+	@echo ... Core/Src/pid.i
+	@echo ... Core/Src/pid.s
 	@echo ... Core/Src/stm32h7xx_it.obj
 	@echo ... Core/Src/stm32h7xx_it.i
 	@echo ... Core/Src/stm32h7xx_it.s
