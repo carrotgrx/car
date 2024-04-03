@@ -27,49 +27,40 @@
 #define IIC_SCL_PIN       LL_GPIO_PIN_8                  /* 连接到SCL时钟线的GPIO */
 #define IIC_SDA_PIN       LL_GPIO_PIN_9                  /* 连接到SDA数据线的GPIO */
 
-#define IIC_SCL_1()  LL_GPIO_SetOutputPin(GPIO_PORT_IIC, IIC_SCL_PIN)		/* SCL = 1 */
-#define IIC_SCL_0()  LL_GPIO_ResetOutputPin(GPIO_PORT_IIC, IIC_SCL_PIN)		/* SCL = 0 */
+#define IIC_SCL_1()  LL_GPIO_SetOutputPin(GPIO_PORT_IIC, IIC_SCL_PIN)        /* SCL = 1 */
+#define IIC_SCL_0()  LL_GPIO_ResetOutputPin(GPIO_PORT_IIC, IIC_SCL_PIN)        /* SCL = 0 */
 
-#define IIC_SDA_1()  LL_GPIO_SetOutputPin(GPIO_PORT_IIC, IIC_SDA_PIN)		/* SDA = 1 */
-#define IIC_SDA_0()  LL_GPIO_ResetOutputPin(GPIO_PORT_IIC, IIC_SDA_PIN)		/* SDA = 0 */
+#define IIC_SDA_1()  LL_GPIO_SetOutputPin(GPIO_PORT_IIC, IIC_SDA_PIN)        /* SDA = 1 */
+#define IIC_SDA_0()  LL_GPIO_ResetOutputPin(GPIO_PORT_IIC, IIC_SDA_PIN)        /* SDA = 0 */
 
-#define IIC_SDA_READ()  LL_GPIO_IsInputPinSet(GPIO_PORT_IIC, IIC_SDA_PIN)	/* 读SDA口线状态 */
+#define IIC_SDA_READ()  LL_GPIO_IsInputPinSet(GPIO_PORT_IIC, IIC_SDA_PIN)    /* 读SDA口线状态 */
 
 
 /*
 *********************************************************************************************************
 *	函 数 名: IIC_Delay
-*	功能说明: IIC总线位延迟，最快400KHz
-*	形    参：无
+*	功能说明: IIC总线位延迟，分辨率1us
+*	形    参：delay:延时时间
 *	返 回 值: 无
 *********************************************************************************************************
 */
-static void IIC_Delay(uint8_t delay)
-{
+static void IIC_Delay(uint8_t delay) {
     int last, curr, val;
     int temp;
 
-    while (delay != 0)
-    {
+    while (delay != 0) {
         temp = delay > 900 ? 900 : delay;
         last = SysTick->VAL;
         curr = last - CPU_FREQUENCY_MHZ * temp;
-        if (curr >= 0)
-        {
-            do
-            {
+        if (curr >= 0) {
+            do {
                 val = SysTick->VAL;
-            }
-            while ((val < last) && (val >= curr));
-        }
-        else
-        {
+            } while ((val < last) && (val >= curr));
+        } else {
             curr += CPU_FREQUENCY_MHZ * 1000;
-            do
-            {
+            do {
                 val = SysTick->VAL;
-            }
-            while ((val <= last) || (val > curr));
+            } while ((val <= last) || (val > curr));
         }
         delay -= temp;
     }
@@ -83,8 +74,7 @@ static void IIC_Delay(uint8_t delay)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-void IIC_Start(void)
-{
+void IIC_Start(void) {
     /* 当SCL高电平时，SDA出现一个下跳沿表示IIC总线启动信号 */
     IIC_SDA_1();
     IIC_SCL_1();
@@ -103,8 +93,7 @@ void IIC_Start(void)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-void IIC_Stop(void)
-{
+void IIC_Stop(void) {
     /* 当SCL高电平时，SDA出现一个上跳沿表示IIC总线停止信号 */
     IIC_SDA_0();
     IIC_SCL_1();
@@ -120,30 +109,24 @@ void IIC_Stop(void)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-void IIC_Send_Byte(uint8_t _ucByte)
-{
+void IIC_Send_Byte(uint8_t _ucByte) {
     uint8_t i;
 
     /* 先发送字节的高位bit7 */
-    for (i = 0; i < 8; i++)
-    {
-        if (_ucByte & 0x80)
-        {
+    for (i = 0; i < 8; i++) {
+        if (_ucByte & 0x80) {
             IIC_SDA_1();
-        }
-        else
-        {
+        } else {
             IIC_SDA_0();
         }
         IIC_Delay(2);
         IIC_SCL_1();
         IIC_Delay(2);
         IIC_SCL_0();
-        if (i == 7)
-        {
+        if (i == 7) {
             IIC_SDA_1(); // 释放总线
         }
-        _ucByte <<= 1;	/* 左移一个bit */
+        _ucByte <<= 1;    /* 左移一个bit */
         IIC_Delay(2);
     }
 }
@@ -156,26 +139,23 @@ void IIC_Send_Byte(uint8_t _ucByte)
 *	返 回 值: 读到的数据
 *********************************************************************************************************
 */
-uint8_t IIC_Read_Byte(uint8_t ack)
-{
+uint8_t IIC_Read_Byte(uint8_t ack) {
     uint8_t i;
     uint8_t value;
 
     /* 读到第1个bit为数据的bit7 */
     value = 0;
-    for (i = 0; i < 8; i++)
-    {
+    for (i = 0; i < 8; i++) {
         value <<= 1;
         IIC_SCL_1();
         IIC_Delay(2);
-        if (IIC_SDA_READ())
-        {
+        if (IIC_SDA_READ()) {
             value++;
         }
         IIC_SCL_0();
         IIC_Delay(2);
     }
-    if(ack == 0)
+    if (ack == 0)
         IIC_NAck();
     else
         IIC_Ack();
@@ -190,20 +170,17 @@ uint8_t IIC_Read_Byte(uint8_t ack)
 *	返 回 值: 返回0表示正确应答，1表示无器件响应
 *********************************************************************************************************
 */
-uint8_t IIC_Wait_Ack(void)
-{
+uint8_t IIC_Wait_Ack(void) {
     uint8_t re;
 
-    IIC_SDA_1();	/* CPU释放SDA总线 */
+    IIC_SDA_1();    /* CPU释放SDA总线 */
     IIC_Delay(1);
-    IIC_SCL_1();	/* CPU驱动SCL = 1, 此时器件会返回ACK应答 */
+    IIC_SCL_1();    /* CPU驱动SCL = 1, 此时器件会返回ACK应答 */
     IIC_Delay(1);
-    if (IIC_SDA_READ())	/* CPU读取SDA口线状态 */
+    if (IIC_SDA_READ())    /* CPU读取SDA口线状态 */
     {
         re = 1;
-    }
-    else
-    {
+    } else {
         re = 0;
     }
     IIC_SCL_0();
@@ -219,15 +196,14 @@ uint8_t IIC_Wait_Ack(void)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-void IIC_Ack(void)
-{
-    IIC_SDA_0();	/* CPU驱动SDA = 0 */
+void IIC_Ack(void) {
+    IIC_SDA_0();    /* CPU驱动SDA = 0 */
     IIC_Delay(2);
-    IIC_SCL_1();	/* CPU产生1个时钟 */
+    IIC_SCL_1();    /* CPU产生1个时钟 */
     IIC_Delay(2);
     IIC_SCL_0();
     IIC_Delay(2);
-    IIC_SDA_1();	/* CPU释放SDA总线 */
+    IIC_SDA_1();    /* CPU释放SDA总线 */
 }
 
 /*
@@ -238,11 +214,10 @@ void IIC_Ack(void)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-void IIC_NAck(void)
-{
-    IIC_SDA_1();	/* CPU驱动SDA = 1 */
+void IIC_NAck(void) {
+    IIC_SDA_1();    /* CPU驱动SDA = 1 */
     IIC_Delay(2);
-    IIC_SCL_1();	/* CPU产生1个时钟 */
+    IIC_SCL_1();    /* CPU产生1个时钟 */
     IIC_Delay(2);
     IIC_SCL_0();
     IIC_Delay(2);
@@ -256,15 +231,14 @@ void IIC_NAck(void)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-void IIC_GPIO_Init(void)
-{
+void IIC_GPIO_Init(void) {
     LL_GPIO_InitTypeDef GPIO_InitStructure;
 
-    RCC_IIC_ENABLE;	/* 打开GPIO时钟 */
+    RCC_IIC_ENABLE;    /* 打开GPIO时钟 */
 
     GPIO_InitStructure.Pin = IIC_SCL_PIN | IIC_SDA_PIN;
     GPIO_InitStructure.Speed = LL_GPIO_SPEED_FREQ_HIGH;
-    GPIO_InitStructure.Mode = LL_GPIO_MODE_OUTPUT;  	/* 开漏输出 */
+    GPIO_InitStructure.Mode = LL_GPIO_MODE_OUTPUT;    /* 开漏输出 */
     LL_GPIO_Init(GPIO_PORT_IIC, &GPIO_InitStructure);
 
     /* 给一个停止信号, 复位IIC总线上的所有设备到待机模式 */
@@ -279,19 +253,18 @@ void IIC_GPIO_Init(void)
 *	返 回 值: 返回值 0 表示正确， 返回1表示未探测到
 *********************************************************************************************************
 */
-uint8_t IIC_CheckDevice(uint8_t _Address)
-{
+uint8_t IIC_CheckDevice(uint8_t _Address) {
     uint8_t ucAck;
 
-    IIC_GPIO_Init();		/* 配置GPIO */
+    IIC_GPIO_Init();        /* 配置GPIO */
 
-    IIC_Start();		/* 发送启动信号 */
+    IIC_Start();        /* 发送启动信号 */
 
     /* 发送设备地址+读写控制bit（0 = w， 1 = r) bit7 先传 */
-    IIC_Send_Byte(_Address|IIC_WR);
-    ucAck = IIC_Wait_Ack();	/* 检测设备的ACK应答 */
+    IIC_Send_Byte(_Address | IIC_WR);
+    ucAck = IIC_Wait_Ack();    /* 检测设备的ACK应答 */
 
-    IIC_Stop();			/* 发送停止信号 */
+    IIC_Stop();            /* 发送停止信号 */
 
     return ucAck;
 }

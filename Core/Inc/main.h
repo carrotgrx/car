@@ -63,13 +63,7 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-typedef struct _PID {
 
-    float kp, ki, kd;
-    float error, lastError;         //误差、上次误差
-    float integral, maxIntegral;    //积分、积分限幅
-    float output, maxOutput;        //输出、输出限幅
-} PID;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -80,7 +74,6 @@ extern uint64_t value;
 extern uint64_t lastValue;
 extern float goal;
 extern float angular;
-extern PID pid;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

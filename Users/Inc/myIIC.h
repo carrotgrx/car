@@ -6,6 +6,7 @@
 #define IIC_WR	0		/* Ð´¿ØÖÆbit */
 #define IIC_RD	1		/* ¶Á¿ØÖÆbit */
 
+static void IIC_Delay(uint8_t delay);
 void IIC_GPIO_Init(void);
 void IIC_Start(void);
 void IIC_Stop(void);

@@ -144,7 +144,7 @@ void MX_USART1_UART_Init(void)
 
 /* USER CODE BEGIN 1 */
 void send(){
-    sprintf((char *) buffer, "speed:%f,%f,%f,%f,%f\r\n", angular, goal, pid.kp, pid.ki, pid.kd);
+    sprintf((char *) buffer, "speed:%f,%f\r\n", angular, goal);
     while (LL_DMA_IsEnabledStream(DMA1, LL_DMA_STREAM_1));
     LL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_13);
     LL_DMA_SetMemoryAddress(DMA1, LL_DMA_STREAM_1, (uint32_t) buffer);

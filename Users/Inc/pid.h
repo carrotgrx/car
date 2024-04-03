@@ -1,10 +1,6 @@
-//
-// Created by carrotgrx on 2024/3/30.
-//
-
 #ifndef MOTOR_PID_H
 #define MOTOR_PID_H
-#include "main.h"
+#include "../../Core/Inc/main.h"
 
 uint32_t Vertical(float med, float angle, float gyro);
 uint32_t Velocity(uint32_t target, uint32_t encoderL, uint32_t encoderR);

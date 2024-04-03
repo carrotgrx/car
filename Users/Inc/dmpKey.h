@@ -1,8 +1,3 @@
-/*
- $License:
-    Copyright (C) 2011 InvenSense Corporation, All Rights Reserved.
- $
- */
 #ifndef DMPKEY_H__
 #define DMPKEY_H__
 

@@ -1,8 +1,3 @@
-/*
- $License:
-    Copyright (C) 2011 InvenSense Corporation, All Rights Reserved.
- $
- */
 #ifndef DMPMAP_H
 #define DMPMAP_H
 
